@@ -9,7 +9,7 @@
       margin: 0;
       padding: 20px;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-image: url('background.jpg');
+      background-image: url('AutumnBg.jpg');
       background-repeat: no-repeat;
       background-position: center;
       background-attachment: fixed;
@@ -20,6 +20,27 @@
       flex-direction: column;
       justify-content: center;
       min-height: 100vh;
+    }
+
+    .leaf {
+      position: absolute;
+      width: 60px;
+      height: 60px;
+      animation: fall linear infinite;
+      opacity: 0.8;
+    }
+
+    @keyframes fall {
+      0% {
+        top: -60px;
+        left: var(--start-left);
+        transform: rotate(0deg);
+      }
+      100% {
+        top: 220vh;
+        left: var(--end-left);
+        transform: rotate(360deg);
+      }
     }
 
     .container {
@@ -34,7 +55,7 @@
       display: inline-block;
       padding: 12px 24px;
       background-color: #ff3366;
-      color: white;
+      color: rgb(39, 17, 17);
       text-decoration: none;
       font-weight: bold;
       border-radius: 8px;
@@ -57,6 +78,9 @@
     }
 
     button{
+      position: absolute;
+      top: 20px;
+      left: 45%;
       padding: 10px 20px;
       font-size: 1.2em;
       margin-bottom: 20px;
@@ -65,6 +89,19 @@
       background-color: orange;
       color: white;
       cursor: pointer;
+      transition: backgrounds 0.3s, 
+      transform 0.1s, box-shadow 0.1s;
+      box-shadow: 0 4px 0 #cc2952;
+      
+    }
+
+    #musicBtn:hover {
+      background-color: #e62e5c;
+    }
+
+    #musicBtn:active {
+      transform: translateY(2px);
+      box-shadow: 0 2px 0 #cc2952;
     }
 
     .anime-gif {
@@ -87,14 +124,30 @@
   </style>
 </head>
 <body>
+
+  <!-- Animated Leaves-->
+   <img src="leaf.png" class="leaf"
+   style="--start-left: 5%; --end-left: 15%; animation-duration: 8s;" >
+   <img src="leaf.png" class="leaf"
+   style="--start-left: 25%; --end-left: 35%; animation-duration: 10s;" >
+   <img src="leaf.png" class="leaf"
+   style="--start-left: 45%; --end-left: 55%; animation-duration: 9s;" >
+   <img src="leaf.png" class="leaf"
+   style="--start-left: 65%; --end-left: 75%; animation-duration: 7s;" >
+   <img src="leaf.png" class="leaf"
+   style="--start-left: 85%; --end-left: 95%; animation-duration: 11s;" >
   
+
 
   <!-- Background Music -->
 
   
 
-  <div class="audio-container">
-  <audio id="bg-music"  autoplay loop>
+  <div class="button">
+    <button onclick="toggleMusic()"
+    id="musicBtn"> Play Music</button>
+  
+  <audio id="bgMusic"  autoplay loop>
     <source src="Multo.mp3" type="audio/mp3">
     <p>Your browser does not support the audio element. <a
     href="Multo.mp3">Click here to listen to the music</a></p>
@@ -102,15 +155,9 @@
 
     
   </audio>
-  <button
-  onclick="document.getElementById('bg-music').play()"
-  style="background-color: pink;
-  border: none; padding: 10px;">Play</button>
-  <button
-  onclick="document.getElementById('bg-music').pause()"
-  style="background-color: lightblue; border: none; padding: 10px;">Pause</button>
-
   </div>
+
+
 
   <script>
   function playAudio() {
@@ -127,14 +174,14 @@
      Hi..Hello.. hahaha Di ako alam pano mag sisimula pero di ko expect na gagawing kong mag confess sayo, i thought back then, manhid na ko pero di pla totoo yun.
     </p>
     <p>
-      Sigurado mako confuse ka bakit ako nag ko confess sayo pero aamnin ko na sayo , nung unang meet palang natin sa school sa isang subject, nagustuhan na talga kita..
+      Sigurado mako confuse ka bakit ako nag ko confess sayo pero aamnin ko na sayo , nung unang meet palang natin sa school sa isang subject, nagustuhan na tlga kita..
     </p>
     <p>
       Di ko tlga alam ano meron sayo hahaha, pero wala ehh pag na feel ko na may kakaiba sa kin, it means na aattract ako , and this is my first time na mag confess.
     </p>
-      Pero it doesnt mean na, may plano pa ako pagktapos neto, kasi alam ko nman may bf kana kaya minsan nag iingat ako, kasi ayaw ko na maka abala ako sa current relationship mo.
+      Pero it doesnt mean na, may plano pa ako pagkatapos neto, kasi alam ko nman may bf kana kaya minsan nag iingat ako, kasi ayaw ko na maka abala ako sa current relationship mo.
     <p>  
-      Nung mga nakaraang linggo diba anniversary ng parents ko nun, di ko expected na darating ka nun hahaha, nafeel ko yung presence mo kahit di tayo nag usap non, ngumiti ako at ngumiti ka din : )
+      Nung mga nakaraang linggo diba anniversary ng parents ko nun, di ko expected na pupunta ka nun hahaha, nafeel ko yung presence mo kahit di tayo nag usap non, ngumiti ako at ngumiti ka din : )
     </p>
     <p>
       Nag taka nga ako bakit pag dating dun sa bahay namin parang mahiyain ka tapos nung time nung exam natin parang confident mo hahaha, and dahil sa pagka shy type mo nun, i liked you even more.
@@ -147,10 +194,10 @@
     <p>
       So etong confession ko na to is for accepting that i can't have you coz you already had someone else, This thing would helped me alot to focus more and be the best version of myself.
     </p>
-    <p>Kasi andami kong what if sa isip ko gabi gabi, so para ma let go ko na to, i need to confess kahit sa chat lang, tsaka smile ka palagi bagay talga sayo, you are more prettier when your smiling : ).
+    <p>Kasi andami ko nang what if sa isip ko gabi gabi, what if naging tayo.. so para ma let go ko na to, i need to confess kahit sa chat lang, tsaka smile ka palagi bagay tlga sayo, you are more prettier when your smiling : ).
      
     <p>
-      Now for sure, kilala mo na sguro ako no need na magpakilala, kapatid mo pala si Ateh May di mo agad sinabi ehh hahaha, for now lilipat nako ng ibang school so its one of the reason i had to confess na.
+      Now for sure, kilala mo na sguro ako no need na magpakilala, ate mo pla si Ateh May di mo agad sinabi ehh hahaha, for now lilipat nako ng ibang school so its one of the reason i had to confess na.
     </p>
     <p>
       Sabi nga nila "If it's meant to be it will be." kaya be happy to whom with you right now, and dont forget always worship God. Ang ganda mo palagi pag nasa kapilya ka, i'm happy for it .
@@ -173,6 +220,24 @@
   <img src="anya.gif"
   alt="Cute Anime" class="anya-gif"> 
   </div>
+
+  <script>
+    let music = 
+    document.getElementById('bgMusic');
+    let btn =
+    document.getElementById('musicBtn');
+
+    function toggleMusic() {
+      if (music.paused) {
+        music.play();
+        btn.textContent = "Pause Music";
+      }else{
+        music.pause();
+        btn.textContent = "Play Music";
+      }
+      }
+      </script>
+    
 </body>
 </html>
 
